@@ -1,0 +1,212 @@
+/* Define Variables Start */
+
+$white:#fff;
+$themecolour:#7e3ba9;
+$textcenter: center;
+
+/*Define Variables End*/
+
+
+/* Define font-size, margin , padding start */
+
+$spaceamounts: (0, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+@each $space in $spaceamounts {
+     @each $side in $sides {
+          .m-#{str-slice($side, 0, 1)}-#{$space} {
+               margin-#{$side}: #{$space}px;
+          }
+          .p-#{str-slice($side, 0, 1)}-#{$space} {
+               padding-#{$side}: #{$space}px;
+          }
+     }
+     .f-#{$space} {
+          font-size: #{$space}px;
+     }
+     .l-#{$space} {
+          font-size: #{$space}px;
+     }
+}
+
+/* Define font-size, margin , padding end */
+
+.region {
+     .transition,
+     p,
+     ul li i:before,
+     ul li i:after {
+          transition: all 0.25s ease-in-out;
+     }
+     .flipIn,
+     h1,
+     ul li {
+          animation: flipdown 0.5s ease both;
+     }
+     .no-select,
+     h2 {
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+     }
+     h1,
+     h2 {
+          color: #fff;
+     }
+     h1 {
+          text-transform: uppercase;
+          font-size: 36px;
+          line-height: 42px;
+          letter-spacing: 3px;
+          font-weight: 100;
+     }
+     h2 {
+          font-size: 22px;
+          line-height: 30px;
+          font-weight: 300;
+          letter-spacing: 1px;
+          display: block;
+          margin: 0;
+          cursor: pointer;
+          padding: 22px 15px;
+     }
+     p {
+          color: #fff;
+          font-size: 17px;
+          line-height: 26px;
+          letter-spacing: 1px;
+          position: relative;
+          overflow: hidden;
+          max-height: 800px;
+          opacity: 1;
+          transform: translate(0, 0);
+          margin: 0px;
+          padding: 0 15px;
+          z-index: 2;
+     }
+    [col-4] {
+    padding: 5px 0;
+}
+     .label-ios {
+          margin: 0;
+          border-bottom: 1px solid #ddd;
+          padding: 15px 0;
+     }
+     ion-icon {
+          color: #603581;
+          vertical-align: middle;
+          font-size: 20px;
+     }
+     .inner_content {
+          width: 100%;
+          float: left;
+          color: #333;
+          font-weight: bold;
+          padding: 0;
+          font-size: 14px;
+     }
+     .head_text {
+          color: #333;
+          padding: 10px 0;
+     }
+     span {
+          color: #7e3ba9;
+          font-weight: bold;
+          float: right;
+          font-size: 14px;
+     }
+     ul {
+          list-style: none;
+          perspective: 900;
+          padding: 0;
+          margin: 0;
+     }
+     ul li {
+          position: relative;
+          padding: 0;
+          margin: 0;
+          padding-bottom: 0px;
+          padding-top: 0px;
+          border-bottom: 0px dotted #dce7eb;
+     }
+     ul li:last-of-type {
+          padding-bottom: 0;
+     }
+     ul li i {
+          position: absolute;
+          transform: translate(-6px, 0);
+          margin-top: 31px;
+          right: 0;
+          padding-right: 15px;
+     }
+     ul li i:before,
+     ul li i:after {
+          content: "";
+          position: absolute;
+          background-color: #fff;
+          width: 3px;
+          height: 9px;
+     }
+     ul li i:before {
+          transform: translate(-2px, 0) rotate(45deg);
+     }
+     ul li i:after {
+          transform: translate(2px, 0) rotate(-45deg);
+     }
+     ul li input[type=checkbox],
+     ul li input[type=checkbox].open {
+          position: absolute;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 0;
+     }
+     //    ul li input[type=checkbox]:checked ~ p, 
+     ul li input.close ~ p {
+          margin-top: 0;
+          max-height: 0;
+          opacity: 0;
+          transform: translate(0, 50%);
+     }
+     //    ul li input[type=checkbox]:checked ~ i:before , 
+     ul li input[type=checkbox].close ~ i:before {
+          transform: translate(2px, 0) rotate(45deg);
+     }
+     //    ul li input[type=checkbox]:checked ~ i:after, 
+     ul li input[type=checkbox].close ~ i:after {
+          transform: translate(-2px, 0) rotate(-45deg);
+     }
+}
+.dark_purple {
+     background: #7e3ba9 !important;
+}
+.light_purple {
+     background: #be91e1 !important;
+}
+@keyframes flipdown {
+     0% {
+          opacity: 0;
+          transform-origin: top center;
+          transform: rotateX(-90deg);
+     }
+     5% {
+          opacity: 1;
+     }
+     80% {
+          transform: rotateX(8deg);
+     }
+     83% {
+          transform: rotateX(6deg);
+     }
+     92% {
+          transform: rotateX(-3deg);
+     }
+     100% {
+          transform-origin: top center;
+          transform: rotateX(0deg);
+     }
+}

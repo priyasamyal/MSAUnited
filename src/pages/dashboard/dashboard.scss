@@ -1,0 +1,162 @@
+/* Define Variables Start */
+
+$white:#fff;
+$themecolour:#7e3ba9;
+$textcenter: center;
+
+/*Define Variables End*/
+
+/* Define font-size, margin , padding start */
+
+$spaceamounts: (0, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px;
+        }
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px;
+        }
+    }
+    .f-#{$space} {
+        font-size: #{$space}px;
+    }
+    .l-#{$space} {
+        font-size: #{$space}px;
+    }
+}
+
+/* Define font-size, margin , padding end */
+
+a {
+    color: $themecolour;
+    font-weight: bold;
+}
+
+
+
+
+
+.volunteer_help_inner {
+    .item-md {
+
+        /* IE10+ */
+        background-image: -ms-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Mozilla Firefox */
+        background-image: -moz-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Opera */
+        background-image: -o-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Webkit (Safari/Chrome 10) */
+        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #603581), color-stop(0, #9960C6), color-stop(100, #603581));
+
+        /* Webkit (Chrome 11+) */
+        background-image: -webkit-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* W3C Markup */
+        background-image: linear-gradient(to bottom right, #603581 0%, #9960C6 0%, #603581 100%);
+
+
+        margin-bottom: 15px;
+        max-width: 100%;
+        margin: 0 auto 15px;
+        width: 100%;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: 0px;
+    }
+    h2 {
+        color: $white;
+        font-size: 18px;
+        font-weight: normal;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        letter-spacing: 0.2px;
+    }
+    p {
+        color: $white;
+        font-size: 12px;
+        font-weight: 300;
+        text-align: left;
+        white-space: unset;
+        letter-spacing: 0.2px;
+    }
+    .item-md ion-icon[item-left] + .item-inner,
+    .item-md ion-icon[item-left] + .item-input,
+    .item-md ion-icon[item-start] + .item-inner,
+    .item-md ion-icon[item-start] + .item-input {
+        margin-left: 5px;
+    }
+    ion-label {
+        overflow: unset;
+
+        font-size: inherit;
+        text-overflow: unset;
+        white-space: unset;
+    }
+    img{
+        max-width: 80px;
+    }
+
+}
+
+
+.menu_head {
+    .toolbar-background-md {
+        /* IE10+ */
+        background-image: -ms-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Mozilla Firefox */
+        background-image: -moz-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Opera */
+        background-image: -o-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* Webkit (Safari/Chrome 10) */
+        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #603581), color-stop(0, #9960C6), color-stop(100, #603581));
+
+        /* Webkit (Chrome 11+) */
+        background-image: -webkit-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+
+        /* W3C Markup */
+        background-image: linear-gradient(to bottom right, #603581 0%, #9960C6 0%, #603581 100%);
+
+    }
+    .profile {
+        text-align: $textcenter;
+        img {
+            margin-top: 8px;
+        }
+    }
+
+
+    p {
+        color: $white;
+        margin: 0px 0 10px;
+    }
+    .toolbar-md {
+        padding: 0px;
+    }
+
+
+}
+
+body .alert-head {
+    border-bottom: 1px solid #ddd !important;
+    padding: 12px !important;
+}
+
+body .alert-md .alert-button {
+    text-transform: initial;
+}
+
+.bar-button-default-md {
+    color: $themecolour;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}

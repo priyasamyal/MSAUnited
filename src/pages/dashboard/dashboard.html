@@ -1,0 +1,67 @@
+<ion-header>
+     <ion-navbar hideBackButton="true" >
+          <button ion-button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title class="header_heading">DASHBOARD</ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+     <div class="volunteer_help_inner" padding>
+          <!--          [navPush]="profilePage"-->
+          <ion-item class="item item-block item-md" (click)="dashboardButtonClick('region')">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/video_chat.png" alt="Video Chat">
+               </ion-icon>
+               <ion-label class="label label-md">
+                    <h2>Video Chat Groups (By Regions or Countries)</h2>
+               </ion-label>
+               <div class="button-effect"></div>
+          </ion-item>
+
+          <ion-item class="item item-block item-md" (click)="dashboardButtonClick('calendar')">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/appointments.png" alt="Calendar">
+               </ion-icon>
+               <ion-label class="label label-md">
+                    <h2>Calendar (Join a Chat)</h2>
+               </ion-label>
+               <div class="button-effect"></div>
+          </ion-item>
+
+          <ion-item (click)="this.singleton.launch(this.singleton.volunteerLink)" class="item item-block item-md">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/volunter.png" alt="Volunteer">
+               </ion-icon>
+               <ion-label class="label label-md">
+                    <h2>Volunteer (As a Moderator or a Buddy)</h2>
+               </ion-label>
+               <div class="button-effect"></div>
+          </ion-item>
+
+          <ion-item (click)="this.singleton.launch(this.singleton.donateLink)" class="item item-block item-md donation_modal">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/donation.png" alt="Donation">
+               </ion-icon>
+               <ion-label class="label label-md">
+                    <h2>Lend A Hand - Donate Now</h2>
+                    <p>(Donate to Keep This Resource Available)</p>
+               </ion-label>
+               <div class="button-effect"></div>
+          </ion-item>
+
+          <ion-item class="item item-block item-md" (click)="dashboardButtonClick('profile')">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/profile-inner.png" alt="Profile">
+               </ion-icon>
+               <ion-label class="label label-md">
+                    <h2>Profile</h2>
+               </ion-label>
+               <div class="button-effect"></div>
+          </ion-item>
+
+     </div>
+
+</ion-content>

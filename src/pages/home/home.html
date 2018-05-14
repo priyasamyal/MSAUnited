@@ -1,0 +1,107 @@
+<ion-header>
+     <ion-navbar>
+          <button ion-button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title class="header_heading">HOME</ion-title>
+
+          <button *ngIf="edited" (click)="openLoginPage()" ion-button="" round="" class="disable-hover button button-md button-default button-default-md button-round button-round-md login-round" ng-reflect-round=""><span class="button-inner">Login</span>
+               <div class="button-effect"></div>
+          </button>
+
+     </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+     <ion-card class="card card-md banner_img">
+          <img src="assets/imgs/home_banner.png">
+          <ion-card-content class="card-content card-content-md title_outer">
+               <p class="title">
+                    Global Online Support Hub - A Community Resource
+               </p>
+          </ion-card-content>
+     </ion-card>
+
+     <div class="about_sec" padding>
+          <div class="text-to-change">
+               <h2>ABOUT HUB</h2>
+               <div class="text_para">There are several progressive brain diseases that are also characterized as sporadic such as  Multiple System Atrophy, Cortical Basal Degeneration, Progressive Supranuclear Palsy, among others. Sporadic diseases are not confined to certain geographies, populations or demographics. As progressive disabling conditions, people suffering from these kinds of diseases face insurmountable challenges to attend regular onsite support meetings. The Global Online Support Hub (GOSH) was designed as an alternative community resource to connect patients with progressive brain diseases and their caregivers with others who find themselves in a similar situation.
+                    <a padding [navPush]="aboutPage" class="about_inner">
+                         <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+                    </a>
+               </div>
+          </div>
+     </div>
+
+     <div class="donation_button">
+          <p>
+               <button (click)="this.singleton.launch(this.singleton.donateLink)" ion-button="" class="button button-md button-default button-default-md home_button"><span class="button-inner">Donate</span>
+                    <div class="button-effect"></div>
+               </button>
+          </p>
+          <p>
+               <button (click)="openRegionPage()" ion-button="" class="button button-md button-default button-default-md home_button"><span class="button-inner">Join Now</span>
+                    <div class="button-effect"></div>
+               </button>
+          </p>
+
+     </div>
+     <div class="volunteer_help" padding>
+          <ion-item (click)="this.singleton.launch(this.singleton.volunteerLink)" class="item item-block item-md">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md" aria-label="football">
+                    <img src="assets/imgs/help_1.png">
+               </ion-icon>
+
+               <ion-label class="label label-md">
+                    <h2>Volunteer to Help?</h2>
+                    <p>We Need Moderators and Buddies!</p>
+               </ion-label>
+
+               <div class="button-effect"></div>
+          </ion-item>
+
+          <ion-item (click)="showModal()" class="item item-block item-md">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/help_2.png">
+               </ion-icon>
+
+               <ion-label class="label label-md">
+                    <h2>Organize a Video Chat?</h2>
+                    <p>Want to Help Organize A Video Chat in your Region?</p>
+               </ion-label>
+
+               <div class="button-effect"></div>
+          </ion-item>
+
+
+          <ion-item (click)="this.singleton.launch(this.singleton.technicalHelpLink)" class="item item-block item-md">
+               <ion-icon color="subtle" item-start="" large="" role="img" class="icon icon-md">
+                    <img src="assets/imgs/help_3.png">
+               </ion-icon>
+
+               <ion-label class="label label-md">
+                    <h2>Technical Help?</h2>
+                    <p>Get Support for Technical Questions &amp; Issues.</p>
+               </ion-label>
+
+               <div class="button-effect"></div>
+          </ion-item>
+
+     </div>
+
+</ion-content>
+
+<div *ngIf="modalEdited" class="modal animate-top">
+     <!-- Modal content -->
+     <div class="modal-content">
+          <div class="head">
+               <span class="close" (click)="hideModal()">&times;</span>
+               <p text-left><strong>Organize Video Chat</strong></p>
+          </div>
+          <hr>
+          <div class="text-pop-inner">
+               <p text-center class="session_head">If you want to organize a new video chat support group in your area, send us an email to: <a href="mailto:support@brainpatient.org"><u>support@brainsupporthub.org</u></a> <br /><br />Please include your name, your address, your telephone number and what region or country you are requesting for the new video chat support group. We will reply to your email request as soon as possible. <br />Thank you!</p>
+          </div>
+     </div>
+</div>

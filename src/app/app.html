@@ -1,0 +1,23 @@
+<ion-menu [content]="content" persistent='true' hideBackButton="true">
+     <ion-header class="my-nav-header">
+          <ion-toolbar>
+               <div class="my-profile" (click)="openImagePicker()"> <img id="userProfilePicture" src="assets/imgs/profile.png">
+                    <p>{{this.singleton.username}}
+<!--                         <br>{{this.singleton.userEmail}}-->
+                    </p>
+               </div>
+          </ion-toolbar>
+     </ion-header>
+     <ion-content>
+          <ion-list>
+               <div *ngFor="let p of pages" (click)="openPage(p)">
+                    <button menuClose ion-item *ngIf="p.edit">{{p.title}}
+                         <ion-icon [name]="p.icon" [ngStyle]="{'color': p.color}" item-end></ion-icon>
+                    </button>
+               </div>
+          </ion-list>
+     </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,176 @@
+<ion-header>
+     <ion-navbar  hideBackButton="true">
+          <button ion-button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title class="header_heading">CONTACT US</ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content class="contact">
+     <ion-grid class="grid" padding>
+          <ion-row class="row">
+               <ion-col col-8 class="text_inner">
+                    <div class="footer_cont">
+                         <h3>Subscribe Now!</h3>
+                         <p class="align-left stay">Stay informed with our newsletter</p>
+                         <div class="email_address_outer">
+                              <form [formGroup]="subscribeNewsletter">
+                                   <div class="email_address">
+                                        <input type="email" formControlName="email" [(ngModel)]="email" class="form-control" placeholder="Your email address">
+                                        <button title="Submit" class="btn subscribe_btn" [disabled]="subscribeNewsletter.invalid" (click)="subscribeFunc()">
+                                        <ion-icon name="ios-arrow-forward"></ion-icon>
+                                   </button>
+                                   </div>
+                              </form>
+                         </div>
+                    </div>
+               </ion-col>
+               <ion-col col-4 class="image_inner">
+                    <div class="footer_cont">
+                         <img (click)="this.singleton.launch(this.singleton.defeatMSALink)" alt="MSA-LOGO" src="assets/imgs/msa-logo-large-300x292.png">
+                    </div>
+               </ion-col>
+               <ion-col col-12 class="seperator-frame">
+                    <div class="line">
+                    </div>
+               </ion-col>
+              <!-- <ion-col col-12>
+                    <div class="email">
+                         <ion-icon class="mail_icon" ios="ios-mail" md="md-mail"></ion-icon>
+                         <a href="mailto:Chat-Info@defeatmsa.org" class="email_info">Chat-Info@defeatmsa.org</a>
+                    </div>
+               </ion-col>-->
+               <ion-col col-12>
+                    <div class="email">
+                         <ion-icon class="mail_icon" ios="ios-mail" md="md-mail"></ion-icon>
+                         <a href="mailto:help@brainpatient.org" class="email_info">help@brainpatient.org</a>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="email">
+                         <ion-icon class="mail_icon" ios="ios-mail" md="md-mail"></ion-icon>
+                         <a href="mailto:support@brainpatient.org" class="email_info">support@brainpatient.org</a>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="email">
+                         <ion-icon class="mail_icon" ios="ios-mail" md="md-mail"></ion-icon>
+                         <a href="mailto:volunteer@brainpatient.org" class="email_info">volunteer@brainpatient.org </a>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="button_frame">
+                         <button (click)="this.singleton.launch(this.singleton.technicalHelpLink)" ion-button="" round="" class="disable-hover button button-md button-default button-default-md shadow_style" ng-reflect-round="">
+                              <span class="button-inner">Technical Help</span>
+                              <div class="button-effect"></div>
+                         </button>
+                         <button (click)="this.singleton.launch(this.singleton.volunteerLink)" ion-button="" round="" class="disable-hover button button-md button-default button-default-md button-round shadow_style" ng-reflect-round="">
+                              <span class="button-inner">Volunteer</span>
+                              <div class="button-effect"></div>
+                         </button>
+                         <button (click)="this.singleton.launch(this.singleton.feedbackLink)" ion-button="" round="" class="disable-hover button button-md button-default button-default-md button-round shadow_style" ng-reflect-round="" style="margin-top: 5px;">
+                              <span class="button-inner">Support Group Hub Suggestions</span>
+                              <div class="button-effect"></div>
+                         </button>
+                    </div>
+               </ion-col>
+               <ion-col col-12 class="seperator-frame">
+                    <div class="line">
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="get_social_inner">
+                         <h2>Get Social with Our Sponsors</h2>
+                         <div class="social_icon">
+                              <ul>
+                                   <li (click)="this.singleton.launch(this.singleton.twitterLink)"><span class="social_media_icon"> <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon></span><a title="Twitter">Twitter</a> </li>
+                                   <li (click)="this.singleton.launch(this.singleton.instagramLink)"><span class="social_media_icon"> <ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon></span><a title="Instagram">Instagram</a> </li>
+                                   <li (click)="this.singleton.launch(this.singleton.facebookLink)"><span class="social_media_icon"><ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon></span><a title="Facebook">Facebook</a> </li>
+                                   <li (click)="this.singleton.launch(this.singleton.youtubeLink)"><span class="social_media_icon"> <ion-icon ios="logo-youtube" md="logo-youtube"></ion-icon></span><a title="YouTube">YouTube</a> </li>
+                              </ul>
+                         </div>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="shop_link">
+                         <a (click)="this.singleton.launch(this.singleton.msaShoeLink)">Kick MSA with the MSA Shoe - Visit The Shoe!</a>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="shop_link">
+                         <a (click)="this.singleton.launch(this.singleton.msaShoeFacebookLink)">MSA Shoe on Facebook</a>
+                    </div>
+               </ion-col>
+               <ion-col col-12 class="seperator-frame">
+                    <div class="line">
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="download_frame">
+                         <h3>Downloads</h3>
+                         <div class="downloads_outer">
+                              <ul>
+                                   <li (click)="this.downloadableHubsFunc('defeat_msa_brochure')">
+                                        <span class="download_icon">
+                                             <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                                        </span>
+                                        <a title="Hub App">Defeat MSA Brochure<br />(tri-folded color, pdf)</a>
+                                   </li>
+                                   <li (click)="this.downloadableHubsFunc('kick_msa_awareness_stickers')">
+                                        <span class="download_icon">
+                                             <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                                        </span>
+                                        <a title="Brochure">KickMSA Awareness Stickers<br />(1-sided color, photo)</a>
+                                   </li>
+                                   <li (click)="this.downloadableHubsFunc('official_msa_awareness_postcard')">
+                                        <span class="download_icon">
+                                             <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                                        </span>
+                                        <a title="Wallet Patient Card">Official MSA Awareness Postcard<br />(5x7 inches, 2-sided, color pdf)</a>
+                                   </li>
+                                   <li (click)="this.downloadableHubsFunc('msa_patient_wallet_card')">
+                                        <span class="download_icon">
+                                             <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                                        </span>
+                                        <a title="MSA Shoe Postcard">MSA Patient Wallet Card<br />(2-sided, folded, business card size)</a>
+                                   </li>
+                                   <li (click)="this.downloadableHubsFunc('msa_patient_brochure')">
+                                        <span class="download_icon">
+                                             <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                                        </span>
+                                        <a title="MSA Shoe Postcard">MSA Patient Brochure<br />(4-folded color, pdf)</a>
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
+               </ion-col>
+               <ion-col col-12 class="seperator-frame">
+                    <div class="line">
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="powered_by">
+                         <p>
+                              The material exchanged in the GOSH is for informational and support purposes. It should not be used for suggesting any diagnosis or understood as recommending any medicines, tests or treatments. Defeat MSA has used all reasonable care to protect privacy, ensure confidentiality and maintain a safe and secure online environment. Every GOSH user should consult with his/her doctor or other health care provider for any medical condition.
+                         </p>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="powered_by">
+                         <p>
+                              <span class="online_support">Online Support Digital Hub Partner </span>
+                              <a class="prologic_logo" title="Prologic Logo" href="https://www.prologic-technologies.com">
+                                   <img alt="PrologicLogo" src="assets/imgs/prologic_logo.png">
+                              </a>
+                         </p>
+                    </div>
+               </ion-col>
+               <ion-col col-12>
+                    <div class="reserved">
+                         <p>© Copyright 2018-2019 Defeat MSA. </p>
+                    </div>
+               </ion-col>
+          </ion-row>
+     </ion-grid>
+</ion-content>

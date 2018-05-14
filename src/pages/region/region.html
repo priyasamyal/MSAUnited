@@ -1,0 +1,29 @@
+<ion-header>
+     <ion-navbar hideBackButton="true">
+          <button ion-button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title class="header_heading">REGIONAL VIDEO GROUPS</ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content class="region">
+     <p text-center class="head_text">Choose your Region below</p>
+
+     <ul>
+          <li *ngFor="let cont of this.singleton.continentArr; let odd=odd; let even=even">
+               <input type="checkbox" [ngClass]="cont.modal" (click)="toggleChange(cont)">
+               <i></i>
+               <h2 [ngClass]="{ dark_purple: even, light_purple: odd }">{{cont.continent_name}}</h2>
+               <p *ngFor="let reg of this.singleton.regionArr">
+                    <ion-label (click)="getGroupListApiFunc(reg.region_id)" class="label label-ios" *ngIf="cont.continent_id==reg.continent_id">
+                         <p col-8 text-left class="inner_content">
+                              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon><ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>{{reg.region_name}}
+                         </p>
+                         <span col-4 text-right>View Groups</span>
+                    </ion-label>
+               </p>
+          </li>
+     </ul>
+
+</ion-content>

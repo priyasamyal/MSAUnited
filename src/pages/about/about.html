@@ -1,0 +1,34 @@
+<ion-header>
+     <ion-navbar>
+          <button ion-button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title class="header_heading">ABOUT THE HUB</ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content #popoverContent padding class="popover-page about_inner">
+     <div #popoverText class="text-to-change">
+          <p>
+               GOSH is in its infancy, therefore, we ask for your patience and understanding. Also, we call upon the entire MSA, CBD and PSP communities throughout the world to help make this program a success! We need your support! Please donate to help keep this resource available for all, volunteer or help recruit others to act as volunteers! We are grateful for your support!
+          </p>
+     </div>
+     <hr />
+
+     <div class="donation_button">
+          <div col-12>
+               <button (click)="this.singleton.launch(this.singleton.donateLink)" ion-button="" class="button button-md button-default button-default-md home_button"><span class="button-inner">Donate Now</span>
+                    <div class="button-effect"></div>
+               </button>
+          </div>
+
+          <p text-center class="text_donate">Designate your donation as a tribute or Earmark it for a specific purpose!</p>
+
+          <div col-12>
+               <button (click)="this.singleton.launch(this.singleton.volunteerLink)" ion-button="" class="button button-md button-default button-default-md home_button"><span class="button-inner"> Volunteer Here</span>
+                    <div class="button-effect"></div>
+               </button>
+          </div>
+
+     </div>
+</ion-content>

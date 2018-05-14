@@ -1,0 +1,253 @@
+/* Define Variables Start */
+
+$white:#fff;
+$themecolour:#603581;
+$textcenter: center;
+/*Define Variables End*/
+
+/* Define font-size, margin , padding start */
+
+$spaceamounts: (0, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+@each $space in $spaceamounts {
+     @each $side in $sides {
+          .m-#{str-slice($side, 0, 1)}-#{$space} {
+               margin-#{$side}: #{$space}px;
+          }
+          .p-#{str-slice($side, 0, 1)}-#{$space} {
+               padding-#{$side}: #{$space}px;
+          }
+     }
+     .f-#{$space} {
+          font-size: #{$space}px;
+     }
+     .l-#{$space} {
+          font-size: #{$space}px;
+     }
+}
+
+/* Define font-size, margin , padding end */
+
+page-home {
+     .header_heading .toolbar-title-md,
+     .toolbar-title-ios {
+          @extend .f-20;
+          font-weight: bold;
+          color: $themecolour;
+          text-align: $textcenter;
+     }
+     .bar-button-default-md,
+     .bar-button-default-ios {
+          color: $themecolour;
+          position: absolute;
+     }
+     .toolbar-background-md {
+          background: $white;
+          /*   border-bottom: 1px solid $themecolour;*/
+     }
+     .banner_img {
+          margin: 0px;
+          width: 100%;
+     }
+     .title {
+          margin: 0;
+          @extend .f-18,
+          .l-30;
+          color: #fff;
+          text-align: $textcenter;
+     }
+     .title_outer {
+          background: $themecolour;
+     }
+     .about_sec h2 {
+          text-align: $textcenter;
+          color: #272626;
+          font-size: 24px;
+     }
+     .about_sec .text_para {
+          text-align: $textcenter;
+          font-size: 14px;
+          color: #333333;
+          line-height: 24px;
+     }
+     .donation_button {
+          text-align: $textcenter;
+          p {
+               margin: 0px 0 15px;
+               ;
+          }
+          .home_button {
+               /*background: $themecolour;
+               border-radius: 0px;
+               padding: 25px 65px;
+               font-size: 22px;
+               font-weight: 300;
+               text-transform: inherit;
+               letter-spacing: 0.2px;*/
+               max-width: 190px;
+               width: 100%;
+          }
+     }
+     .login-round {
+          position: absolute;
+          left: auto;
+          right: 10px;
+          top: 8px;
+          /*left: auto;
+          right: 10px;
+          top: -4px;*/
+     }
+     .button-default-ios {
+          top: 14px;
+          margin: 0px;
+     }
+     .volunteer_help {
+          .item-md {
+               background: $themecolour;
+               margin-bottom: 15px;
+               max-width: 330px;
+               margin: 0 auto 15px;
+               width: 100%;
+          }
+          .item-md.item-block .item-inner {
+               border-bottom: 0px;
+          }
+          h2 {
+               color: $white;
+               font-size: 18px;
+               font-weight: normal;
+          }
+          p {
+               color: $white;
+               font-size: 13px;
+               font-weight: 300;
+               text-align: left;
+               letter-spacing: 0.2px;
+          }
+          .item-md ion-icon[item-left] + .item-inner,
+          .item-md ion-icon[item-left] + .item-input,
+          .item-md ion-icon[item-start] + .item-inner,
+          .item-md ion-icon[item-start] + .item-input {
+               margin-left: 5px;
+          }
+          ion-label {
+               overflow: unset;
+               font-size: inherit;
+               text-overflow: unset;
+               white-space: unset;
+          }
+     }
+     ion-icon {
+          color: #603581;
+     }
+     /* The Modal (background) */
+     .modal {
+          /* z-index: 1;
+        padding-top: 0px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.4);*/
+          position: fixed;
+          top: 0;
+          z-index: 10;
+          min-height: 100%;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.4);
+     }
+     /* Modal Content */
+     .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0px;
+          border: 0px solid #888;
+          width: 90% !important;
+          border-radius: 4px;
+          height: auto;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          transform: translateX(-50%) translateY(-50%);
+          -moz-transform: translateX(-50%) translateY(-50%);
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          -o-transform: translateX(-50%) translateY(-50%);
+     }
+     /* The Close Button */
+     .close {
+          color: #7e3ba9;
+          float: right;
+          font-size: 26px;
+          font-weight: bold;
+          background: #fff;
+          border-radius: 50px;
+          width: 28px;
+          height: 28px;
+          text-align: center;
+          line-height: 26px;
+     }
+     .close:hover,
+     .close:focus {
+          text-decoration: none;
+          cursor: pointer;
+     }
+     p {
+          margin: 5px 0 10px;
+     }
+     .head {
+          position: fixed !important;
+          left: auto;
+          right: auto;
+          background: #7e3ba9;
+          width: 100%;
+          padding: 15px;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          height: 60px;
+          p {
+               color: #fff;
+               font-size: 20px;
+          }
+     }
+     .text-pop-inner {
+          margin-top: 70px;
+          padding: 0 10px;
+          p {
+               margin: 0 0 18px;
+               font-size: 15px;
+               font-weight: bold;
+          }
+          a {
+               color: #7e3ba9 !important;
+               font-size: 15px;
+               font-weight: bold;
+          }
+     }
+     .session_head {
+          p {
+               color: #000 !important;
+               font-weight: bold;
+          }
+     }
+}
+
+.menu-inner .toolbar-background-md {
+     background: #603581;
+}
+
+.profile {
+     text-align: center;
+     img {
+          margin-top: 8px;
+     }
+}
+
+p {
+     color: $white;
+     margin: 0px 0 10px;
+}
+
+/*.toolbar-md {
+        padding: 0px;
+    }*/

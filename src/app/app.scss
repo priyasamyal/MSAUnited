@@ -1,0 +1,274 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+     font-family: 'Raleway';
+     src: url('../assets/fonts/Raleway.eot') format('embedded-opentype'), url('../assets/fonts/Raleway.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+ion-app.ios {
+     font-family: "Raleway";
+     font-size: 1.4rem;
+     background-color: #fff;
+}
+
+ion-app.md {
+     font-family: "Raleway";
+     font-size: 1.4rem;
+     background-color: #fff;
+}
+
+ion-app.wp {
+     font-family: "Raleway";
+     font-size: 1.4rem;
+     background-color: #fff;
+}
+
+.bar-button-menutoggle-md ion-icon,
+.bar-button-menutoggle-ios ion-icon {
+     padding: 0 6px;
+     font-size: 36px;
+}
+
+.menu_head .toolbar-background-ios,
+.my-nav-header .toolbar-background-ios {
+     background: #603581;
+}
+
+.menu_head .bar-button-menutoggle-ios ion-icon {
+     padding: 0 6px;
+     font-size: 36px;
+}
+
+.text-input::-moz-placeholder {
+     color: #fff;
+}
+
+.text-input:-ms-input-placeholder {
+     color: #fff;
+}
+
+.text-input::-webkit-input-placeholder {
+     text-indent: 0;
+     color: #fff;
+}
+
+.content-ios .scroll-content {
+     margin-top: 56px;
+}
+
+.toolbar-ios {
+     //     min-height: 56px;
+}
+
+.my-profile {
+     text-align: center;
+}
+
+.select-ios {
+     color: #fff;
+     padding: 11px 8px 11px 0px;
+     font-size: 17px;
+}
+
+ion-select {
+     max-width: 100%;
+     width: 100%;
+}
+
+.select-ios .select-icon {
+     position: absolute;
+     width: 12px;
+     height: 18px;
+     right: 20px;
+}
+
+.select-ios .select-icon .select-icon-inner {
+     color: #fff;
+}
+
+.alert-ios .alert-input {
+     padding: 15px 15px;
+     font-size: 14px;
+}
+
+.alert-head {
+     border-bottom: 1px solid #ddd;
+     padding: 12px;
+     background: #603581;
+     color: #fff;
+     font-weight: normal;
+}
+
+.action-sheet-group.action-sheet-group-cancel {
+     background: #9960C6;
+}
+
+.action-sheet-group-cancel span.button-inner {
+     color: #fff;
+     -webkit-justify-content: center;
+     text-align: center;
+     justify-content: center;
+     font-size: 20px;
+}
+
+.action-sheet-group.action-sheet-group-cancel {
+     padding-bottom: 0 !important;
+}
+
+page-login .toolbar-background.toolbar-background-md,
+page-signup .toolbar-background.toolbar-background-md {
+     background: transparent;
+}
+
+.action-sheet-ios .action-sheet-cancel {
+     background: #007aff !important;
+}
+
+:focus,
+:active {
+     /*dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden*/
+     //     outline: unset !important;
+}
+
+.alert-message {
+     //     display: none;
+}
+
+.text-input::-moz-placeholder {
+     color: #d3d3d3;
+}
+
+.text-input:-ms-input-placeholder {
+     color: #d3d3d3;
+}
+
+.text-input::-webkit-input-placeholder {
+     text-indent: 0;
+     color: #d3d3d3;
+}
+
+img[alt="calender"] {
+     height: 30px;
+}
+
+.list-ios .item-block .item-inner {
+     border-bottom: 1.55px solid #c8c7cc;
+}
+
+.my-nav-header .my-profile p {
+     color: #ffffff;
+     font-weight: bold;
+}
+
+.toolbar-ios ion-title {
+     //    padding: 0 55px 1px;
+     padding-right: 25px;
+     padding-left: 55px;
+}
+
+.alert-ios .alert-message,
+.alert-ios .alert-input-group {
+     padding: 10px 15px;
+     line-height: 20px;
+}
+
+.my-profile img {
+     width: 100px;
+     height: 100px;
+     border-radius: 100px;
+}
+
+input,
+textarea,
+[contenteditable] {
+     caret-color: #333;
+}
+
+.style_box button {
+     color: #fff;
+     background-color: #ac6adc;
+     border: 2px solid #fff;
+     font-weight: bold;
+}
+
+/*body {
+     top: 70px !important;
+}*/
+
+body {
+     position: relative;
+     min-height: 100%;
+     top: 0px !important;
+}
+
+.skiptranslate.goog-te-gadget {
+     position: fixed;
+     top: 0;
+     z-index: 999;
+     padding: 0;
+     font-size: 20px;
+     -ms-transform: translateX(-50%);
+     -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+     -o-transform: translateX(-50%);
+     transform: translateX(-50%);
+     left: 50%;
+}
+
+.skiptranslate {
+     //     display: none;
+}
+
+#google_translate_element span {
+     display: none;
+}
+
+#google_translate_element .skiptranslate.goog-te-gadget {
+     font-size: 0;
+}
+
+.goog-te-gadget .goog-te-combo {
+     font-size: 12px;
+     border: 2px solid #7e3ba9;
+     color: #7e3ba9;
+     width: 150px;
+     margin: 0 !important;
+     text-align-last: center;
+}
+
+.md-ios-device {
+     margin-top: 16px !important;
+}
+
+.md-android-device {
+     margin-top: 0 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+     margin-top: 20px;
+     display: none;
+}
+
+div#goog-gt-tt {
+     padding: 10px 14px;
+     display: none !important;
+}
+
+.goog-text-highlight {
+     background-color: transparent !important;
+     box-shadow: none !important;
+}
