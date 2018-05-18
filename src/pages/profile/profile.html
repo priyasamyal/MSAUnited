@@ -1,132 +1,135 @@
 <ion-header>
-     <ion-navbar hideBackButton="true">
-          <button ion-button menuToggle>
-               <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-title class="header_heading">EDIT PROFILE</ion-title>
-     </ion-navbar>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="header_heading">EDIT PROFILE</ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content class="grid-basic-page log sign_inner">
-     <div class="background-frame">
-          <div class="login-outter">
-               <div class="inner-box">
+  <div class="background-frame">
+    <div class="login-outter">
+      <div class="inner-box">
 
-                    <form [formGroup]="profile">
-                         <ion-grid>
-                              <ion-row>
+        <form [formGroup]="profile">
+          <ion-grid>
+            <ion-row>
 
-                                   <ion-col col-12>
-                                        <div class="user_type_label">
-                                             <span class="button-inner">User Role:<span class="user_type_asterik">&#42;</span></span>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-12>
+                <div class="user_type_label">
+                  <span class="button-inner">User Role:
+                    <span class="user_type_asterik">&#42;</span>
+                  </span>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <ion-item class="item item-ios terms_check_1">
-                                             <input type="radio" value="caregiver" formControlName="userOption" [(ngModel)]="userOption">
-                                        </ion-item>
-                                        <ion-label class="user-option">Caregiver</ion-label>
-                                   </ion-col>
+              <ion-col col-6>
+                <ion-item class="item item-ios terms_check_1">
+                  <input type="radio" value="caregiver" formControlName="userOption" [(ngModel)]="userOption">
+                </ion-item>
+                <ion-label class="user-option">Caregiver</ion-label>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <ion-item class="item item-ios terms_check_1">
-                                             <input type="radio" value="patient" formControlName="userOption" [(ngModel)]="userOption">
-                                        </ion-item>
-                                        <ion-label class="user-option">Patient</ion-label>
-                                   </ion-col>
+              <ion-col col-6>
+                <ion-item class="item item-ios terms_check_1">
+                  <input type="radio" value="patient" formControlName="userOption" [(ngModel)]="userOption">
+                </ion-item>
+                <ion-label class="user-option">Patient</ion-label>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <div class="asterisk_sign">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <ion-input type="text" formControlName="firstname" placeholder="First name" [(ngModel)]="firstname"></ion-input>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-6>
+                <div class="asterisk_sign">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <ion-input type="text" formControlName="firstname" placeholder="First name" [(ngModel)]="firstname"></ion-input>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <div class="asterisk_sign">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <ion-input type="text" formControlName="lastname" placeholder="Last name" [(ngModel)]="lastname"></ion-input>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-6>
+                <div class="asterisk_sign">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <ion-input type="text" formControlName="lastname" placeholder="Last name" [(ngModel)]="lastname"></ion-input>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <div class="asterisk_sign">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <ion-select interface="action-sheet" class="phone_code" submitText="Okay" formControlName="phonecode" [(ngModel)]="phonecode">
-                                                       <ion-option value="" disabled>Country Code</ion-option>
-                                                       <ion-option *ngFor="let p of this.singleton.countriesArr" [value]="p.country_id">{{p.phone_code}}&nbsp;({{p.country_name}})</ion-option>
-                                                  </ion-select>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-6>
+                <div class="asterisk_sign">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <ion-select class="phone_code" submitText="Okay" formControlName="phonecode" [(ngModel)]="phonecode">
+                      <ion-option value="" disabled>Country Code</ion-option>
+                      <ion-option *ngFor="let p of this.singleton.countriesArr" [value]="p.country_id">{{p.phone_code}}&nbsp;({{p.country_name}})</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <div class="asterisk_sign">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <ion-input type="tel" maxlength="10" formControlName="contactnumber" placeholder="Telephone no." [(ngModel)]="contactnumber"></ion-input>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-6>
+                <div class="asterisk_sign">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <ion-input type="tel" maxlength="10" formControlName="contactnumber" placeholder="Telephone no." [(ngModel)]="contactnumber"></ion-input>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-12>
-                                        <div class="asterisk_sign my-timezone">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <select-searchable formControlName="timezone" [(ngModel)]="timezone" [items]="this.singleton.timezoneArr" itemValueField="timezone_id" itemTextField="combined" [canSearch]="true" (onChange)="portChange($event)">
-                                                  </select-searchable>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-12>
+                <div class="asterisk_sign my-timezone">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <select-searchable formControlName="timezone" [(ngModel)]="timezone" [items]="this.singleton.timezoneArr" itemValueField="timezone_id"
+                      itemTextField="combined" [canSearch]="true" (onChange)="portChange($event)">
+                    </select-searchable>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <ion-item>
-                                             <ion-input type="email" disabled formControlName="email" placeholder="Email" [(ngModel)]="email"></ion-input>
-                                        </ion-item>
-                                   </ion-col>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-input type="email" disabled formControlName="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+                </ion-item>
+              </ion-col>
 
-                                   <ion-col col-6>
-                                        <ion-item>
-                                             <ion-input type="text" disabled formControlName="username" placeholder="Username" [(ngModel)]="username"></ion-input>
-                                        </ion-item>
-                                   </ion-col>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-input type="text" disabled formControlName="username" placeholder="Username" [(ngModel)]="username"></ion-input>
+                </ion-item>
+              </ion-col>
 
-                                   <ion-col col-12>
-                                        <div class="asterisk_sign">
-                                             <span class="asterisk_in"></span>
-                                             <ion-item>
-                                                  <ion-input type="text" formControlName="diagnosis" placeholder="Diagnosis" [(ngModel)]="diagnosis"></ion-input>
-                                             </ion-item>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-12>
+                <div class="asterisk_sign">
+                  <span class="asterisk_in"></span>
+                  <ion-item>
+                    <ion-input type="text" formControlName="diagnosis" placeholder="Diagnosis" [(ngModel)]="diagnosis"></ion-input>
+                  </ion-item>
+                </div>
+              </ion-col>
 
-                                   <ion-col col-12>
-                                        <div class="note">
-                                             <span class="button-inner">
-                                        <ion-icon ios="ios-star" md="md-star" class="star_icon"></ion-icon>
-                                        These fields are Mandatory to fill.
-                                      </span>
-                                        </div>
-                                   </ion-col>
+              <ion-col col-12>
+                <div class="note">
+                  <span class="button-inner">
+                    <ion-icon ios="ios-star" md="md-star" class="star_icon"></ion-icon>
+                    These fields are Mandatory to fill.
+                  </span>
+                </div>
+              </ion-col>
 
-                              </ion-row>
+            </ion-row>
 
-                         </ion-grid>
+          </ion-grid>
 
-                         <div padding class="style_box">
-                              <button ion-button color="primary" block (click)="updateProfileFunc()" [disabled]="profile.invalid">Save</button>
-                              <button margin-top ion-button color="primary" block (click)="doChangePassword()">Change Password</button>
-                         </div>
-                    </form>
-
-               </div>
-
+          <div padding class="style_box">
+            <button ion-button color="primary" block (click)="updateProfileFunc()" [disabled]="profile.invalid">Save</button>
+            <button margin-top ion-button color="primary" block (click)="doChangePassword()">Change Password</button>
           </div>
-     </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
 </ion-content>

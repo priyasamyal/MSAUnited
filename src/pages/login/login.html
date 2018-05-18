@@ -1,11 +1,11 @@
 <ion-header no-border class="top">
-     <ion-navbar>
-          <button ion-button menuToggle></button>
-     </ion-navbar>
+      <ion-navbar>
+            <!-- <button ion-button menuToggle></button> -->
+      </ion-navbar>
 </ion-header>
 
 <ion-content class="log">
-     <!--<ion-header no-border>
+      <!--<ion-header no-border>
           <ion-navbar color="colortp">
                <button ion-button menuToggle>
                     <ion-icon name="menu"></ion-icon>
@@ -13,41 +13,46 @@
           </ion-navbar>
      </ion-header>-->
 
-     <div padding class="background-frame">
-          <div class="login-outter">
-               <div class="splash_top_logo">
-                    <img src="assets/imgs/bluebrain.png">
-               </div>
-               <div class="inner-box" padding>
-                    <form [formGroup]="login">
-                         <ion-item>
-                              <ion-input class="log_input" type="email" formControlName="username" placeholder="Username" [(ngModel)]="data.username"></ion-input>
-                         </ion-item>
-                         <ion-icon name="person" role="img" class="icon icon-md ion-md-person user" aria-label="person"></ion-icon>
-                         <ion-item>
-                              <ion-input class="log_input" type="password" formControlName="password" placeholder="Password" [(ngModel)]="data.password"></ion-input>
-                         </ion-item>
-                         <ion-icon name="lock" role="img" class="icon icon-md ion-md-lock password" aria-label="lock"></ion-icon>
+      <div padding class="background-frame">
+            <div class="login-outter">
+                  <div class="splash_top_logo">
+                        <img src="assets/imgs/bluebrain.png">
+                  </div>
+                  <div class="inner-box" padding>
+                        <form [formGroup]="login">
+                              <ion-item>
+                                    <ion-input class="log_input" type="email" formControlName="username" placeholder="Username" [(ngModel)]="data.username"></ion-input>
+                              </ion-item>
+                              <ion-icon name="person" role="img" class="icon icon-md ion-md-person user" aria-label="person"></ion-icon>
+                              <ion-item>
+                                    <ion-input class="log_input" type="password" formControlName="password" placeholder="Password" [(ngModel)]="data.password"></ion-input>
+                              </ion-item>
+                              <ion-icon name="lock" role="img" class="icon icon-md ion-md-lock password" aria-label="lock"></ion-icon>
 
-                         <div padding-top padding-bottom class="style_box">
-                              <button ion-button color="primary" block [disabled]="login.invalid" (click)="loginFunc()">LOGIN</button>
-                         </div>
+                              <div padding-top padding-bottom class="style_box">
+                                    <button ion-button color="primary" block [disabled]="login.invalid" (click)="loginFunc()">LOGIN</button>
+                              </div>
 
-                    </form>
-               </div>
+                        </form>
+                  </div>
 
-               <div class="forgot">
-                    <div class="forget-pswd bar-light">
-                          <h2 [navPush]="signupPage"><a>New user?&nbsp;</a><span>Signup</span></h2>
-                    </div>
-                    <div class="forget-pswd bar-light" block (click)="doPrompt()">
-                         <h2><a>Reset Password</a></h2>
-                    </div>
-               </div>
-               
-               <div class="splash_logo">
-                    <img (click)="this.singleton.launch(this.singleton.defeatMSALink)" src="assets/imgs/msa-logo-large-300x292.png">
-               </div>
-          </div>
-     </div>
+                  <div class="forgot">
+                        <div class="forget-pswd bar-light">
+                              <h2 [navPush]="signupPage">
+                                    <a>New user?&nbsp;</a>
+                                    <span>Signup</span>
+                              </h2>
+                        </div>
+                        <div class="forget-pswd bar-light" block (click)="doPrompt()">
+                              <h2>
+                                    <a>Reset Password</a>
+                              </h2>
+                        </div>
+                  </div>
+
+                  <div class="splash_logo">
+                        <img (click)="this.singleton.launch(this.singleton.defeatMSALink)" src="assets/imgs/msa-logo-large-300x292.png">
+                  </div>
+            </div>
+      </div>
 </ion-content>

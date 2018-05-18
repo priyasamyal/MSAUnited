@@ -1,39 +1,68 @@
-$width:100%;
-$float:none;
-$float-left:left;
-$margin-all:0 auto;
-$padding-all:0 auto;
-$height:100%;
-$text-center:center;
-$button-color:#603581;
-$white:#fff;
-$letter-spacing:0.2px;
-$text-light:#d6b1f2;
+$width: 100%;
+$float: none;
+$float-left: left;
+$margin-all: 0 auto;
+$padding-all: 0 auto;
+$height: 100%;
+$text-center: center;
+$button-color: #603581;
+$white: #fff;
+$letter-spacing: 0.2px;
+$text-light: #d6b1f2;
 
 /*for padding , margin , fonts*/
 
-$spaceamounts: (-4, 0, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30); // Adjust this to include the pixel amounts you need.
-$sides: (top, bottom, left, right); // Leave this variable alone
+$spaceamounts: (
+  -4,
+  0,
+  8,
+  10,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+); // Adjust this to include the pixel amounts you need.
+$sides: (
+  top,
+  bottom,
+  left,
+  right
+); // Leave this variable alone
 @each $space in $spaceamounts {
-    @each $side in $sides {
-        .m-#{str-slice($side, 0, 1)}-#{$space} {
-            margin-#{$side}: #{$space}px;
-        }
-        .p-#{str-slice($side, 0, 1)}-#{$space} {
-            padding-#{$side}: #{$space}px;
-        }
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px;
     }
-    .f-#{$space} {
-        font-size: #{$space}px;
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px;
     }
-    .l-#{$space} {
-        line-height: #{$space}px;
-    }
+  }
+  .f-#{$space} {
+    font-size: #{$space}px;
+  }
+  .l-#{$space} {
+    line-height: #{$space}px;
+  }
 }
 
 page-login {
-    .background-frame {
-       /* background-image: -ms-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
+  .background-frame {
+    /* background-image: -ms-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
         background-image: -moz-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
         background-image: -o-linear-gradient(top left, #603581 0%, #9960C6 0%, #603581 100%);
         background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #603581), color-stop(0, #9960C6), color-stop(100, #603581));
@@ -45,201 +74,199 @@ page-login {
           width: $width;
           height: $height;
           position: absolute;*/
-         
-        .login-outter {
-            position: absolute;
-            width: $width;
-            float: $float;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translateX(-50%) translateY(-50%);
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            -moz-transform: translateX(-50%)translateY(-50%);
-            -o-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-            .splash_logo {
-                width: $width;
-                height: $height;
-                text-align: $text-center;
-                img {
-                    width: 90px;
-                }
-            }
-            .inner-box {
-                width: $width;
-                float: $float-left;
-                padding-bottom: 0;
-                @extend.m-t-12;
-                .item.item-block.item-md.item-input,
-                .item-ios {
-                    background-color: rgba(255, 255, 255, 0.2);
-                    border-radius: 5px;
-                    margin-bottom: 10px;
-                    border: none;
-                    .text-input::-moz-placeholder {
-                        color: #fff;
-                    }
-                }
-                .item-inner {
-                    border: none !important;
-                }
-                .text-input.text-input-md {
-                    padding-left: 20px;
-                }
-                .user {
-                    position: absolute;
-                    left: 25px;
-                    font-size: 24px;
-                    top: 206px;
-                    color: $white;
-                    right: auto;
-                }
-                .password {
-                    position: absolute;
-                    left: 25px;
-                    font-size: 24px;
-                    bottom: 0;
-                    color: $white;
-                    right: auto;
-                    top: 259px;
-                }
-            }
-            .style_box {
-                width: $width;
-                float: $float-left;
-                padding-top: 0px;
-                .button.button-md.button-default.button-default-md.button-block.button-block-md.button-md-primary {
-                    background: $button-color;
-                    border-radius: 30px;
-                    font-size: 18px;
-                    letter-spacing: $letter-spacing;
-                }
-                .button-ios-primary {
-                    color: #fff;
-                    background-color: #603581;
-                    border-radius: 60px;
-                }
-            }
-            .forget-pswd {
-                width: $width;
-                float: $float-left;
-                text-align: $text-center;
-                @extend.m-r-18;
-                h2 {
-                    color: $white;
-                    @extend .f-16;
-                    letter-spacing: $letter-spacing;
-                    span {
-                        letter-spacing: 1px;
-                        text-decoration: underline;
-                        color: $text-light;
-                    }
-                }
-                a {
-                    color: $white;
-                    letter-spacing: 1px;
-                    text-decoration: none;
-                    font-weight: 400;
-                }
-            }
+
+    .login-outter {
+      position: absolute;
+      width: $width;
+      float: $float;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -o-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      .splash_logo {
+        width: $width;
+        height: $height;
+        text-align: $text-center;
+        img {
+          width: 90px;
         }
+      }
+      .inner-box {
+        width: $width;
+        float: $float-left;
+        padding-bottom: 0;
+        @extend.m-t-12;
+        .item.item-block.item-md.item-input,
+        .item-ios {
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 5px;
+          margin-bottom: 10px;
+          border: none;
+          .text-input::-moz-placeholder {
+            color: #fff;
+          }
+        }
+        .item-inner {
+          border: none !important;
+        }
+        .text-input.text-input-md {
+          padding-left: 20px;
+        }
+        .user {
+          position: absolute;
+          left: 25px;
+          font-size: 24px;
+          //  top: 206px;
+          top: 45%;
+          color: $white;
+          right: auto;
+        }
+        .password {
+          position: absolute;
+          left: 25px;
+          font-size: 24px;
+          bottom: 0;
+          color: $white;
+          right: auto;
+          // top: 259px;
+          top: 55%;
+        }
+      }
+      .style_box {
+        width: $width;
+        float: $float-left;
+        padding-top: 0px;
+        .button.button-md.button-default.button-default-md.button-block.button-block-md.button-md-primary {
+          background: $button-color;
+          border-radius: 30px;
+          font-size: 18px;
+          letter-spacing: $letter-spacing;
+        }
+        .button-ios-primary {
+          color: #fff;
+          background-color: #603581;
+          border-radius: 60px;
+        }
+      }
+      .forget-pswd {
+        width: $width;
+        float: $float-left;
+        text-align: $text-center;
+        @extend.m-r-18;
+        h2 {
+          color: $white;
+          @extend .f-16;
+          letter-spacing: $letter-spacing;
+          span {
+            letter-spacing: 1px;
+            text-decoration: underline;
+            color: $text-light;
+          }
+        }
+        a {
+          color: $white;
+          letter-spacing: 1px;
+          text-decoration: none;
+          font-weight: 400;
+        }
+      }
     }
-    .alert-md .alert-button .button-inner {
-        background: $button-color;
-        color: $white;
-        border-radius: 30px;
-        @extend.p-r-12,
-        .p-l-12,
+  }
+  .alert-md .alert-button .button-inner {
+    background: $button-color;
+    color: $white;
+    border-radius: 30px;
+    @extend.p-r-12, .p-l-12,
         .p-t-8,
         .p-b-8;
-    }
-    .alert-md .alert-input {
-        margin: 5px 0;
-        border-bottom: 1px solid #481d68;
-        color: #000;
-    }
-    .alert-md .alert-head {
-        color: #481d68;
-        text-align: center;
-    }
-    .alert-md .alert-message,
-    .alert-md .alert-input-group {
-        padding: 0 24px 15px;
-    }
-    .alert-md .alert-button-group {
-        padding: 8px 14px;
-    }
-    .alert-md .alert-input:focus {
-        border-bottom: 2px solid #481d68;
-    }
-    body .alert-md .alert-input {
-        color: #481d68;
-    }
+  }
+  .alert-md .alert-input {
+    margin: 5px 0;
+    border-bottom: 1px solid #481d68;
+    color: #000;
+  }
+  .alert-md .alert-head {
+    color: #481d68;
+    text-align: center;
+  }
+  .alert-md .alert-message,
+  .alert-md .alert-input-group {
+    padding: 0 24px 15px;
+  }
+  .alert-md .alert-button-group {
+    padding: 8px 14px;
+  }
+  .alert-md .alert-input:focus {
+    border-bottom: 2px solid #481d68;
+  }
 
+  body .alert-md .alert-input {
+    color: #481d68;
+  }
 
-.log_input {
+  .log_input {
     padding-left: 25px;
-}
+  }
 
-.splash_top_logo {
+  .splash_top_logo {
     width: $width;
     height: $height;
     text-align: $text-center;
-}
+  }
 
-.splash_top_logo img {
+  .splash_top_logo img {
     width: 260px;
-}
+  }
 
-.text-input-ios {
+  .text-input-ios {
     color: #fff;
-}
+  }
 
-.top .toolbar-background-ios {
+  .top .toolbar-background-ios {
     background: none;
-}
+  }
 
-.top .bar-button-default-ios {
+  .top .bar-button-default-ios {
     color: #fff !important;
-}
+  }
 
-.top ion-icon {
+  .top ion-icon {
     color: #fff !important;
-}
+  }
 
-page-login .toolbar-background-md {
+  page-login .toolbar-background-md {
     background: transparent;
-}
+  }
 
-.grid-basic-page {
-
+  .grid-basic-page {
     ion-col div {
-        text-align: $text-center;
+      text-align: $text-center;
     }
     .col {
-        padding: 0 10px;
+      padding: 0 10px;
     }
     p {
-        padding: 10px 0 0 10px !important;
-        margin: 0;
+      padding: 10px 0 0 10px !important;
+      margin: 0;
     }
     .phone_code {
-        padding-left: 0px;
-        color: #fff !important;
-        text-align: left !important;
-        padding-left: 15px;
-
+      padding-left: 0px;
+      color: #fff !important;
+      text-align: left !important;
+      padding-left: 15px;
     }
     .select-ios {
-        color: #fff;
+      color: #fff;
     }
+  }
 
-}
-
-.log .scroll-content {
+  .log .scroll-content {
     margin-top: 0px !important;
+  }
 }
-    }
 
 /*
 

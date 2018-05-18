@@ -33,21 +33,21 @@ export class HomePage {
   }
 
   openLoginPage() {
-    (window as any).session(
-      this.singleton.domain,
-      'sessionDetailJSON.session_id',
-      ' sessionDetailJSON.api_key',
-      'sessionDetailJSON.tokbox_session_id',
-      'sessionDetailJSON.token',
-      'callback.data.timer_duration',
-      'callback.data.is_moderator',
-      ' userDetailJSON.user_id',
-      'userDetailJSON.username',
-      'callback.data.session_detail.is_moderator_in_session',
-      ' callback.data.publish_audio',
-      'callback.data.publish_video',
-      'callback.data.all_audio_status'
-    );
+    // (window as any).session(
+    //   this.singleton.domain,
+    //   'sessionDetailJSON.session_id',
+    //   'sessionDetailJSON.api_key',
+    //   'sessionDetailJSON.tokbox_session_id',
+    //   'sessionDetailJSON.token',
+    //   'callback.data.timer_duration',
+    //   'callback.data.is_moderator',
+    //   'userDetailJSON.user_id',
+    //   'userDetailJSON.username',
+    //   'callback.data.session_detail.is_moderator_in_session',
+    //   'callback.data.publish_audio',
+    //   'callback.data.publish_video',
+    //   'callback.data.all_audio_status'
+    // );
     this.navCtrl.push(LoginPage);
   }
 

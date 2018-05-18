@@ -1,50 +1,55 @@
 <ion-header>
-     <ion-navbar>
-          <button ion-button menuToggle>
-               <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-title class="header_heading">SCHEDULES</ion-title>
-     </ion-navbar>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_heading">SCHEDULES</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-     <div class="rsvp_info">
-          <p text-center>Click RSVP button to reserve your seat in
-               <br><strong><u> {{this.singleton.currentRegionDetail.region_name}}</u> of <u>{{this.singleton.selectedGroupName}} Group </u></strong></p>
-     </div>
+    <div class="rsvp_info">
+        <p text-center>Click RSVP button to reserve your seat in
+            <br>
+            <strong>
+                <u> {{this.singleton.currentRegionDetail.region_name}}</u> of
+                <u>{{this.singleton.selectedGroupName}} Group </u>
+            </strong>
+        </p>
+    </div>
 
-     <div *ngFor="let details of this.singleton.sessionListArr;">
-          <div class="rsvp_outer" padding *ngIf="details.is_participant==0 && details.participants>0">
-               <div class="item-inner">
-                    <div class="input-wrapper">
-                         <ion-label class="label label-md">
-                              <img src="assets/imgs/book.png" alt="calender"> {{details.title}}
-                         </ion-label>
-                    </div>
-               </div>
-               <div class="item-inner">
-                    <div class="input-wrapper">
-                         <ion-label class="label label-md">
-                              <img src="assets/imgs/calender.png" alt="calender"> {{details.description}}
-                         </ion-label>
-                    </div>
-               </div>
-               <div class="item-inner">
-                    <div class="input-wrapper">
-                         <ion-label class="label label-md">
-                              <img src="assets/imgs/appointment.png" alt="calender"> Schedule on {{details.date_time}}
-                         </ion-label>
-                    </div>
-               </div>
-               <div class="item-inner">
-                    <div class="input-wrapper">
-                         <ion-label class="label label-md">
-                              <img src="assets/imgs/seat.png" alt="calender"> {{details.participants}} Seats Remaining
-                         </ion-label>
-                    </div>
-                    <ion-badge item-end="" class="badge badge-md" (click)="rsvpFunc(details.session_id)">RSVP</ion-badge>
-               </div>
-          </div>
-     </div>
+    <div *ngFor="let details of this.singleton.sessionListArr;">
+        <div class="rsvp_outer" padding *ngIf="details.is_participant==0 && details.participants>0">
+            <div class="item-inner">
+                <div class="input-wrapper">
+                    <ion-label class="label label-md">
+                        <img src="assets/imgs/book.png" alt="calender"> {{details.title}}
+                    </ion-label>
+                </div>
+            </div>
+            <div class="item-inner">
+                <div class="input-wrapper">
+                    <ion-label class="label label-md">
+                        <img src="assets/imgs/calender.png" alt="calender"> {{details.description}}
+                    </ion-label>
+                </div>
+            </div>
+            <div class="item-inner">
+                <div class="input-wrapper">
+                    <ion-label class="label label-md">
+                        <img src="assets/imgs/appointments.png" alt="calender"> Schedule on {{details.date_time}}
+                    </ion-label>
+                </div>
+            </div>
+            <div class="item-inner">
+                <div class="input-wrapper">
+                    <ion-label class="label label-md">
+                        <img src="assets/imgs/seat.png" alt="calender"> {{details.participants}} Seats Remaining
+                    </ion-label>
+                </div>
+                <ion-badge item-end="" class="badge badge-md" (click)="rsvpFunc(details.session_id)">RSVP</ion-badge>
+            </div>
+        </div>
+    </div>
 
 </ion-content>

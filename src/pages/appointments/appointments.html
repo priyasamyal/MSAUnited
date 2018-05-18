@@ -1,98 +1,121 @@
 <ion-header>
-     <ion-navbar hideBackButton="true">
-          <button ion-button menuToggle>
-               <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-title class="header_heading">CALENDAR</ion-title>
-     </ion-navbar>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_heading">CALENDAR</ion-title>
+    </ion-navbar>
 
-     <ion-toolbar no-border-top>
-          <ion-segment [(ngModel)]="appts">
-               <ion-segment-button value="upcoming" (click)="getUpcomingAppointmentsListFunc()">
-                    Upcoming
-               </ion-segment-button>
-               <ion-segment-button value="completed" (click)="getPastAppointmentsListFunc()">
-                    Completed
-               </ion-segment-button>
-          </ion-segment>
-     </ion-toolbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="appts">
+            <ion-segment-button value="upcoming" (click)="getUpcomingAppointmentsListFunc()">
+                Upcoming
+            </ion-segment-button>
+            <ion-segment-button value="completed" (click)="getPastAppointmentsListFunc()">
+                Completed
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-     <div [ngSwitch]="appts">
+    <div [ngSwitch]="appts">
 
-          <ion-list *ngSwitchCase="'upcoming'">
-               <div class="appointments" *ngIf="upcomingSessionList.length > 0">
-                    <ion-item *ngFor="let item of upcomingSessionList;">
-                         <ion-label class="label label-md">
-                              <ion-col _ngcontent-c0="" align-self-center="" class="" text-center="">
-                                   <ion-note _ngcontent-c0="" class="note note-md video_middle_img">
-                                        <img src="assets/imgs/appointment.png" alt="calender">{{item.date_time}}
-                                   </ion-note>
-                              </ion-col>
-                              <h2><img src="assets/imgs/book.png" alt="calender">{{item.title}}</h2>
-                              <h2><img src="assets/imgs/status.png" alt="calender">Status: {{item.participant_status}}</h2>
-                              <p text-left><img src="assets/imgs/calender.png" alt="calender">{{item.description}}</p>
-                              <ion-col _ngcontent-c0="" *ngIf="item.participant_status == 'Approved'" align-self-center="" class="" text-center="">
-                                   <ion-note _ngcontent-c0="" class="note note-md video_middle_text">
-                                        <button ion-button="" round="" class="disable-hover button button-md button-default button-default-md button-round button-round-md" ng-reflect-round=""><span class="button-inner" (click)="joinChatFunc(item.session_id)">Join Chat</span>
-                                             <div class="button-effect"></div>
-                                        </button>
-                                   </ion-note>
-                              </ion-col>
-                         </ion-label>
-                    </ion-item>
-               </div>
-               <p *ngIf="upcomingSessionList.length == 0" text-center class="head_text">There is no upcoming chat yet.</p>
-          </ion-list>
+        <ion-list *ngSwitchCase="'upcoming'">
+            <div class="appointments" *ngIf="upcomingSessionList.length > 0">
+                <ion-item *ngFor="let item of upcomingSessionList;">
+                    <ion-label class="label label-md">
+                        <ion-col _ngcontent-c0="" align-self-center="" class="" text-center="">
+                            <ion-note _ngcontent-c0="" class="note note-md video_middle_img">
+                                <img src="assets/imgs/appointments.png" alt="calender">{{item.date_time}}
+                            </ion-note>
+                        </ion-col>
+                        <h2>
+                            <img src="assets/imgs/book.png" alt="calender">{{item.title}}</h2>
+                        <h2>
+                            <img src="assets/imgs/status.png" alt="calender">Status: {{item.participant_status}}</h2>
+                        <p text-left>
+                            <img src="assets/imgs/calender.png" alt="calender">{{item.description}}</p>
+                        <ion-col _ngcontent-c0="" *ngIf="item.participant_status == 'Approved'" align-self-center="" class="" text-center="">
+                            <ion-note _ngcontent-c0="" class="note note-md video_middle_text">
+                                <button ion-button="" round="" class="disable-hover button button-md button-default button-default-md button-round button-round-md"
+                                    ng-reflect-round="">
+                                    <span class="button-inner" (click)="joinChatFunc(item.session_id)">Join Chat</span>
+                                    <div class="button-effect"></div>
+                                </button>
+                            </ion-note>
+                        </ion-col>
+                    </ion-label>
+                </ion-item>
+            </div>
+            <p *ngIf="upcomingSessionList.length == 0" text-center class="head_text">There is no upcoming chat yet.</p>
+        </ion-list>
 
-          <ion-list *ngSwitchCase="'completed'">
-               <div class="appointments" *ngIf="completedSessionList.length > 0">
-                    <ion-item *ngFor="let item of completedSessionList;">
-                         <ion-label class="label label-md">
-                              <ion-col _ngcontent-c0="" align-self-center="" class="" text-center="">
-                                   <ion-note _ngcontent-c0="" class="note note-md video_middle_img">
-                                        <img src="assets/imgs/appointment.png" alt="calender">{{item.date_time}}
-                                   </ion-note>
-                              </ion-col>
-                              <h2><img src="assets/imgs/book.png" alt="calender">{{item.title}}</h2>
-                              <p text-left><img src="assets/imgs/calender.png" alt="calender">{{item.description}}</p>
-                              <h2 [ngClass]="item.status"><img src="assets/imgs/status.png" alt="calender">Status: {{item.status}}</h2>
-                         </ion-label>
-                    </ion-item>
-               </div>
-               <p *ngIf="completedSessionList.length == 0" text-center class="head_text">There is no complete chat yet.</p>
-          </ion-list>
+        <ion-list *ngSwitchCase="'completed'">
+            <div class="appointments" *ngIf="completedSessionList.length > 0">
+                <ion-item *ngFor="let item of completedSessionList;">
+                    <ion-label class="label label-md">
+                        <ion-col _ngcontent-c0="" align-self-center="" class="" text-center="">
+                            <ion-note _ngcontent-c0="" class="note note-md video_middle_img">
+                                <img src="assets/imgs/appointments.png" alt="calender">{{item.date_time}}
+                            </ion-note>
+                        </ion-col>
+                        <h2>
+                            <img src="assets/imgs/book.png" alt="calender">{{item.title}}</h2>
+                        <p text-left>
+                            <img src="assets/imgs/calender.png" alt="calender">{{item.description}}</p>
+                        <h2 [ngClass]="item.status">
+                            <img src="assets/imgs/status.png" alt="calender">Status: {{item.status}}</h2>
+                    </ion-label>
+                </ion-item>
+            </div>
+            <p *ngIf="completedSessionList.length == 0" text-center class="head_text">There is no complete chat yet.</p>
+        </ion-list>
 
-     </div>
+    </div>
 
 </ion-content>
 
 <div _ngcontent *ngIf="countdownModal" class="modal animate-top">
-     <!-- Modal content -->
-     <div class="modal-content">
-          <div class="head">
-               <span class="close" (click)="hideModal()">&times;</span>
-               <p><strong id="titleName">CHAT STARTS IN</strong></p>
-          </div>
-          <hr>
-          <div class="text-pop-inner">
-               <p text-center class="session_head" id="startAt">Your session will start at/p>
-                    <p text-center class="remain_time">TIME REMAINING</p>
-                    <ion-card>
-                         <div class="timer_outer">
-                              <ul>
-                                   <li class=""><span class="time_lavel minutes" id="minutes">00</span><br /><span class="timer_inner">Minutes</span></li>
-                                   <li class="time_colon"><span class="time_lavel"><img alt="timmer" src="assets/imgs/colon.png"></span><span class="timer_inner">&nbsp;</span></li>
-                                   <li class=""><span class="time_lavel seconds" id="seconds">00</span><br /><span class="timer_inner">Seconds</span></li>
-                              </ul>
-                         </div>
-                    </ion-card>
-                    <div *ngIf="startChatBtn" padding-top padding-bottom class="style_box">
-                         <button ion-button color="primary" block (click)="joinChatFunc('empty')">JOIN CHAT</button>
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="head">
+            <span class="close" (click)="hideModal()">&times;</span>
+            <p>
+                <strong id="titleName">CHAT STARTS IN</strong>
+            </p>
+        </div>
+        <hr>
+        <div class="text-pop-inner">
+            <p text-center class="session_head" id="startAt">Your session will start at/p>
+                <p text-center class="remain_time">TIME REMAINING</p>
+                <ion-card>
+                    <div class="timer_outer">
+                        <ul>
+                            <li class="">
+                                <span class="time_lavel minutes" id="minutes">00</span>
+                                <br />
+                                <span class="timer_inner">Minutes</span>
+                            </li>
+                            <li class="time_colon">
+                                <span class="time_lavel">
+                                    <img alt="timmer" src="assets/imgs/colon.png">
+                                </span>
+                                <span class="timer_inner">&nbsp;</span>
+                            </li>
+                            <li class="">
+                                <span class="time_lavel seconds" id="seconds">00</span>
+                                <br />
+                                <span class="timer_inner">Seconds</span>
+                            </li>
+                        </ul>
                     </div>
+                </ion-card>
+                <div *ngIf="startChatBtn" padding-top padding-bottom class="style_box">
+                    <button ion-button color="primary" block (click)="joinChatFunc('empty')">JOIN CHAT</button>
+                </div>
 
-          </div>
-     </div>
+        </div>
+    </div>
 </div>

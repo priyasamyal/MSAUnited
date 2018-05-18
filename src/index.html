@@ -72,37 +72,53 @@
   <script>
     function session(domainUrl, sessionId, apiKey, tokboxSessionId, token, duration, isModerator, userId, username, isModeratorInSession, isAudioEnabled, isVideoEnabled, isMuteAll) {
 
-      //  var jsonObject = {
-      //       "session_id": sessionId,
-      //       "api_key": apiKey,
-      //       "tokbox_session_id": tokboxSessionId,
-      //       "token": token,
-      //       "duration": duration,
-      //       "is_moderator": isModerator,
-      //       "user_id": userId,
-      //       "username": username,
-      //       "domain_url": domainUrl,
-      //       "is_moderator_in_session": isModeratorInSession,
-      //       "is_audio_enabled": isAudioEnabled,
-      //       "is_video_enabled": isVideoEnabled,
-      //       "is_mute_all": isMuteAll
-      //  };
-
       var jsonObject = {
-        "session_id": '123',
-        "api_key": '46114022',
-        "tokbox_session_id": '2_MX40NjExNDAyMn5-MTUyNTY4ODg0NjkxOX43TXczaXNrdERKc1hpV1lkOU1ub0hPQnd-fg',
-        "token": 'T1==cGFydG5lcl9pZD00NjExNDAyMiZzaWc9MzgyYTA2YWI5MWVhYjA1ZDhiMWFiODA1NThmNmVkNGI4OWJiZTc4MjpzZXNzaW9uX2lkPTJfTVg0ME5qRXhOREF5TW41LU1UVXlOVFk0T0RnME5qa3hPWDQzVFhjemFYTnJkRVJLYzFocFYxbGtPVTF1YjBoUFFuZC1mZyZjcmVhdGVfdGltZT0xNTI1Njg4OTE4Jm5vbmNlPTAuNTM2NTAwNTI2MTA4NzAzMiZyb2xlPW1vZGVyYXRvciZleHBpcmVfdGltZT0xNTI4MjgwOTE4JmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9',
-        "duration": '20:30',
-        "is_moderator": '1',
-        "user_id": '2',
-        "username": 'username',
-        "domain_url": 'domainUrl',
-        "is_moderator_in_session": '1',
-        "is_audio_enabled": '1',
-        "is_video_enabled": '1',
-        "is_mute_all": '0'
+        "session_id": sessionId,
+        "api_key": apiKey,
+        "tokbox_session_id": tokboxSessionId,
+        "token": token,
+        "duration": duration,
+        "is_moderator": isModerator,
+        "user_id": userId,
+        "username": username,
+        "domain_url": domainUrl,
+        "is_moderator_in_session": isModeratorInSession,
+        "is_audio_enabled": isAudioEnabled,
+        "is_video_enabled": isVideoEnabled,
+        "is_mute_all": isMuteAll
       };
+
+      // var jsonObject = {
+      //   "session_id": '2_MX40NjA2NDM3Mn5-MTUyNjU1OTY5MDc4Nn5CQjRHSCs5TUhHSUtNVkxRcmxTcXFudGJ-fg',
+      //   "api_key": '46064372',
+      //   "tokbox_session_id": '2_MX40NjA2NDM3Mn5-MTUyNjU1OTY5MDc4Nn5CQjRHSCs5TUhHSUtNVkxRcmxTcXFudGJ-fg',
+      //   "token": 'T1==cGFydG5lcl9pZD00NjA2NDM3MiZzaWc9NjM2NWZjMTBiOTVhYmJjYzUwM2EyOWFmZWU5NWQ5MWRjOTY1YzFiYzpzZXNzaW9uX2lkPTJfTVg0ME5qQTJORE0zTW41LU1UVXlOalUxT1RZNU1EYzRObjVDUWpSSFNDczVUVWhIU1V0TlZreFJjbXhUY1hGdWRHSi1mZyZjcmVhdGVfdGltZT0xNTI2NTYwMjgwJnJvbGU9bW9kZXJhdG9yJm5vbmNlPTE1MjY1NjAyODAuMzA0ODcxNzgxODQ4MiZleHBpcmVfdGltZT0xNTI2NjQ2NjgwJmNvbm5lY3Rpb25fZGF0YT00Mw==',
+      //   "duration": '0:01',
+      //   "is_moderator": '1',
+      //   "user_id": '43',
+      //   "username": 'raman',
+      //   "domain_url": '"https://www.brainpatient.org/api/mobile/',
+      //   "is_moderator_in_session": '1',
+      //   "is_audio_enabled": '1',
+      //   "is_video_enabled": '1',
+      //   "is_mute_all": '0'
+      // };
+
+      //  var jsonObject = {
+      //   "session_id": '2_MX40NjA2NDM3Mn5-MTUyNjU1OTY5MDc4Nn5CQjRHSCs5TUhHSUtNVkxRcmxTcXFudGJ-fg',
+      //   "api_key": '46064372',
+      //   "tokbox_session_id": '2_MX40NjA2NDM3Mn5-MTUyNjU1OTY5MDc4Nn5CQjRHSCs5TUhHSUtNVkxRcmxTcXFudGJ-fg',
+      //   "token": 'T1==cGFydG5lcl9pZD00NjA2NDM3MiZzaWc9NjM2NWZjMTBiOTVhYmJjYzUwM2EyOWFmZWU5NWQ5MWRjOTY1YzFiYzpzZXNzaW9uX2lkPTJfTVg0ME5qQTJORE0zTW41LU1UVXlOalUxT1RZNU1EYzRObjVDUWpSSFNDczVUVWhIU1V0TlZreFJjbXhUY1hGdWRHSi1mZyZjcmVhdGVfdGltZT0xNTI2NTYwMjgwJnJvbGU9bW9kZXJhdG9yJm5vbmNlPTE1MjY1NjAyODAuMzA0ODcxNzgxODQ4MiZleHBpcmVfdGltZT0xNTI2NjQ2NjgwJmNvbm5lY3Rpb25fZGF0YT00Mw==',
+      //   "duration": '0:01',
+      //   "is_moderator": '0',
+      //   "user_id": '87',
+      //   "username": 'Bharti test',
+      //   "domain_url": '"https://www.brainpatient.org/api/mobile/',
+      //   "is_moderator_in_session": '1',
+      //   "is_audio_enabled": '1',
+      //   "is_video_enabled": '1',
+      //   "is_mute_all": '0'
+      // };
 
       console.log("SESSION DETAILS:" + JSON.stringify(jsonObject));
 

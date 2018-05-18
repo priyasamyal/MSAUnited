@@ -1,32 +1,33 @@
 <ion-header>
-     <ion-navbar>
-          <button ion-button menuToggle>
-               <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-title class="header_heading">REGIONAL VIDEO GROUPS</ion-title>
-     </ion-navbar>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_heading">REGIONAL VIDEO GROUPS</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="region">
-     <p text-center class="head_text">Choose your Group below to view the Scheduled Chats
-          <br />
-          <strong>
-               <u>{{this.singleton.currentRegionDetail.region_name}}
-               </u>
-          </strong></p>
+    <p text-center class="head_text">Choose your Group below to view the Scheduled Chats
+        <br />
+        <strong>
+            <u>{{this.singleton.currentRegionDetail.region_name}}
+            </u>
+        </strong>
+    </p>
 
-     <ul>
-          <li *ngFor="let grp of this.singleton.currentGroupDetail; let odd=odd; let even=even">
-               <p>
-                    <ion-label class="label label-ios">
-                         <p col-8 text-left class="inner_content">
-                              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-                              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>{{grp.group_name}}
-                         </p>
-                         <span col-4 text-right (click)="getSessionListApiFunc(grp)">View Schedule</span>
-                    </ion-label>
-               </p>
-          </li>
-     </ul>
+    <ul>
+        <li *ngFor="let grp of this.singleton.currentGroupDetail; let odd=odd; let even=even">
+            <p>
+                <ion-label class="label label-ios">
+                    <p col-8 text-left class="inner_content">
+                        <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                        <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>{{grp.group_name}}
+                    </p>
+                    <span col-4 text-right (click)="getSessionListApiFunc(grp)">View Schedule</span>
+                </ion-label>
+            </p>
+        </li>
+    </ul>
 
 </ion-content>
